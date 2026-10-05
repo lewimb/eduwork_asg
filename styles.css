@@ -111,7 +111,7 @@ h1, h2, h3, .h4, .h5, .modal-title {
 }
 
 /* Menu mobile: beri jarak dari baris brand */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .site-nav .navbar-collapse {
     padding: 12px 0 8px;
   }
@@ -285,34 +285,280 @@ h1, h2, h3, .h4, .h5, .modal-title {
   text-underline-offset: 4px;
 }
 
-/* ============ Kartu proyek (tombol pembuka modal) ============ */
-.project-card {
-  padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  color: inherit;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+/* ============ Layanan: tiga kolom dipisah garis ============ */
+.section-intro {
+  max-width: 52ch;
+  font-size: 1.05rem;
 }
 
-.project-card:hover {
+.services {
+  border-top: 2px solid var(--navy);
+}
+
+.service {
+  position: relative;
+  padding: 32px 28px 36px;
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.2s ease;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  background-color: #fff;
+}
+
+.service:hover::before {
+  transform: scaleX(1);
+}
+
+@media (min-width: 768px) {
+  .service {
+    border-bottom: 0;
+  }
+  .service + .service {
+    border-left: 1px solid var(--line);
+  }
+}
+
+.service__icon {
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-bottom: 20px;
+  transition: stroke 0.2s ease, transform 0.3s ease;
+}
+
+.service:hover .service__icon {
+  stroke: var(--coral);
+  transform: translateY(-3px);
+}
+
+.service__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.service__text {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 34ch;
+}
+
+/* ============ Portofolio: carousel di atas navy ============ */
+.project-showcase {
+  background: var(--navy);
+  color: #fff;
+}
+
+.showcase-lead {
+  color: #c9d1ee;
+}
+
+.showcase-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.showcase-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #4a5578;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.showcase-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.showcase-btn:hover {
   border-color: var(--coral);
-  box-shadow: 0 0 0 1px var(--coral);
+  background: var(--coral);
 }
 
-.project-card .card-img-top {
-  height: 180px;
-  object-fit: cover;
+.slide {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.slide__media {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--sand), var(--coral));
-  border-radius: 0;
 }
 
-.project-card .card-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+/* Ponsel/tablet: gambar mengikuti rasio 16:10 di atas teks */
+.slide__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
+
+/* Desktop: tinggi slide tetap, gambar mengisi penuh kolomnya */
+@media (min-width: 992px) {
+  .slide {
+    height: 460px;
+  }
+
+  .slide__media img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+.slide:hover .slide__media img {
+  transform: scale(1.04);
+}
+
+.slide__body {
+  padding: clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.slide__count {
+  font-size: 0.85rem;
+  color: var(--sand);
+  margin-bottom: 0.75rem;
+}
+
+.slide__title {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.slide__text {
+  color: #c9d1ee;
+  max-width: 40ch;
+  margin-bottom: 1.25rem;
+}
+
+.tag--dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e3e8fa;
+}
+
+/* Indikator: keluarkan dari posisi absolut bawaan Bootstrap, taruh di bawah slide */
+.carousel .showcase-dots {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  margin: 16px 0 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.carousel .showcase-dots [data-bs-target] {
+  width: 28px;
+  height: 4px;
+  margin: 0 6px 0 0;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  background-clip: padding-box;
+  background-color: #4a5578;
+  opacity: 1;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel .showcase-dots .active {
+  width: 56px;
+  background-color: var(--coral);
+}
+
+/* ============ Keahlian ============ */
+.skills__group {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--navy);
+}
+
+.skills__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.skills__list li {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 4px 0 4px 0;
+  transition: color 0.15s ease, padding-left 0.2s ease;
+}
+
+.skills__list li:hover {
+  color: var(--coral);
+  padding-left: 8px;
+}
+
+/* ============ Ajakan ============ */
+.cta-band {
+  background: var(--coral);
+  color: var(--navy-deep);
+  padding: clamp(44px, 6vw, 64px) 0;
+}
+
+.cta-band__title {
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.3rem);
+  margin-bottom: 0.4rem;
+}
+
+.cta-band__text {
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.cta-band__btn {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--navy);
+  --bs-btn-border-color: var(--navy);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-hover-color: var(--navy);
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-color: var(--navy);
+  padding-inline: 2rem;
+}
+
 
 .tag {
   background: var(--teal-tint);
@@ -498,7 +744,6 @@ h1, h2, h3, .h4, .h5, .modal-title {
   background: var(--navy);
   color: #c9d1ee;
   padding: 48px 0 32px;
-  border-top: 3px solid var(--coral);
   font-size: 0.9rem;
 }
 
