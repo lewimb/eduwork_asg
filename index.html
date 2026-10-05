@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Navbar: collapses into a toggle menu below md -->
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top site-nav">
+    <!-- Navbar: collapses into a toggle menu below lg -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top site-nav">
       <div class="container">
         <a href="#header" class="navbar-brand d-flex align-items-center gap-2">
           <span class="brand-mark">LB</span>
@@ -38,14 +38,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-md-center gap-md-4">
-            <li class="nav-item"><a class="nav-link" href="#header">Beranda</a></li>
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
             <li class="nav-item"><a class="nav-link" href="#biodata">Biodata</a></li>
+            <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
             <li class="nav-item"><a class="nav-link" href="#portofolio">Portofolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
             <li class="nav-item">
               <button
                 type="button"
-                class="btn btn-coral btn-sm mt-2 mt-md-0"
+                class="btn btn-coral btn-sm mt-3 mt-lg-0"
                 data-bs-toggle="modal"
                 data-bs-target="#contactModal"
               >
@@ -138,112 +139,269 @@
         </div>
       </section>
 
-      <!-- Portofolio -->
-      <section class="py-5 section-pad section-tint" id="portofolio">
+      <!-- Layanan -->
+      <section class="section-pad section-tint" id="layanan">
         <div class="container">
-          <h2 class="section-heading">Portofolio</h2>
-          <p class="text-secondary mb-5">
-            Beberapa proyek yang pernah saya kerjakan. Pilih proyek untuk melihat detailnya.
-          </p>
+          <div class="row g-5 align-items-end mb-5">
+            <div class="col-lg-5">
+              <h2 class="section-heading">Yang bisa saya bantu</h2>
+            </div>
+            <div class="col-lg-7">
+              <p class="text-secondary mb-0 section-intro">
+                Saya menerima proyek kecil hingga menengah, dari halaman profil
+                sederhana sampai aplikasi web dengan basis data.
+              </p>
+            </div>
+          </div>
 
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-            <div class="col">
+          <div class="row g-0 services">
+            <div class="col-md-4 service">
+              <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="9" width="36" height="28" rx="3" />
+                <path d="M6 16h36M17 41h14M24 37v4" />
+              </svg>
+              <h3 class="service__title">Website profil dan landing page</h3>
+              <p class="service__text">
+                Halaman untuk usaha, organisasi, atau pribadi yang rapi di ponsel
+                maupun laptop.
+              </p>
+            </div>
+            <div class="col-md-4 service">
+              <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <ellipse cx="24" cy="11" rx="15" ry="5" />
+                <path d="M9 11v13c0 2.8 6.7 5 15 5s15-2.2 15-5V11M9 24v13c0 2.8 6.7 5 15 5s15-2.2 15-5V24" />
+              </svg>
+              <h3 class="service__title">Aplikasi web dengan basis data</h3>
+              <p class="service__text">
+                Sistem pencatatan seperti absensi, katalog produk, atau manajemen
+                tugas, lengkap dengan halaman admin.
+              </p>
+            </div>
+            <div class="col-md-4 service">
+              <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M30 8l10 10-20 20H10V28L30 8zM25 13l10 10" />
+              </svg>
+              <h3 class="service__title">Perbaikan tampilan website</h3>
+              <p class="service__text">
+                Merapikan website lama agar responsif, mudah dibaca, dan lebih
+                cepat dimuat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portofolio: carousel proyek -->
+      <section class="section-pad project-showcase" id="portofolio">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+            <div>
+              <h2 class="section-heading">Portofolio</h2>
+              <p class="showcase-lead mb-0">
+                Geser untuk melihat proyek lain, atau buka detailnya.
+              </p>
+            </div>
+            <div class="showcase-controls" aria-label="Navigasi proyek">
               <button
+                class="showcase-btn"
                 type="button"
-                class="card project-card h-100 w-100 text-start"
-                data-bs-toggle="modal"
-                data-bs-target="#projectModal"
-                data-title="Aplikasi Manajemen Tugas"
-                data-img="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
-                data-desc="Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari. Tugas bisa dikelompokkan per mata kuliah, diberi tenggat, dan ditandai selesai. Data tersimpan di browser sehingga tetap ada saat halaman dibuka kembali."
-                data-role="Desain antarmuka dan seluruh logika JavaScript"
-                data-tags="HTML,CSS,JavaScript"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="prev"
+                aria-label="Proyek sebelumnya"
               >
-                <img
-                  src="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
-                  class="card-img-top"
-                  alt="Tampilan proyek Aplikasi Manajemen Tugas"
-                  width="350"
-                  height="170"
-                  loading="lazy"
-                />
-                <span class="card-body d-block">
-                  <span class="h5 card-title d-block">Aplikasi Manajemen Tugas</span>
-                  <span class="card-text d-block text-secondary small mb-3">
-                    Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari.
-                  </span>
-                  <span class="d-flex flex-wrap gap-2">
-                    <span class="badge tag">HTML</span>
-                    <span class="badge tag">CSS</span>
-                    <span class="badge tag">JavaScript</span>
-                  </span>
-                </span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+              </button>
+              <button
+                class="showcase-btn"
+                type="button"
+                data-bs-target="#projectCarousel"
+                data-bs-slide="next"
+                aria-label="Proyek berikutnya"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
               </button>
             </div>
+          </div>
 
-            <div class="col">
-              <button
-                type="button"
-                class="card project-card h-100 w-100 text-start"
-                data-bs-toggle="modal"
-                data-bs-target="#projectModal"
-                data-title="Website Toko Online"
-                data-img="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
-                data-desc="Website sederhana untuk menampilkan dan mengelola katalog produk. Admin dapat menambah, mengubah, dan menghapus produk, sementara pengunjung bisa mencari produk berdasarkan kategori."
-                data-role="Back-end PHP dan rancangan basis data MySQL"
-                data-tags="PHP,MySQL"
-              >
-                <img
-                  src="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
-                  class="card-img-top"
-                  alt="Tampilan proyek Website Toko Online"
-                  width="350"
-                  height="170"
-                  loading="lazy"
-                />
-                <span class="card-body d-block">
-                  <span class="h5 card-title d-block">Website Toko Online</span>
-                  <span class="card-text d-block text-secondary small mb-3">
-                    Website sederhana untuk menampilkan dan mengelola katalog produk.
-                  </span>
-                  <span class="d-flex flex-wrap gap-2">
-                    <span class="badge tag">PHP</span>
-                    <span class="badge tag">MySQL</span>
-                  </span>
-                </span>
-              </button>
+          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row g-0 slide">
+                  <div class="col-lg-7 slide__media">
+                    <img
+                      src="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
+                      alt="Tampilan proyek Aplikasi Manajemen Tugas"
+                    />
+                  </div>
+                  <div class="col-lg-5 slide__body">
+                    <span class="slide__count">1 dari 3</span>
+                    <h3 class="slide__title">Aplikasi Manajemen Tugas</h3>
+                    <p class="slide__text">
+                      Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                      <span class="badge tag tag--dark">HTML</span>
+                      <span class="badge tag tag--dark">CSS</span>
+                      <span class="badge tag tag--dark">JavaScript</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-coral"
+                      data-bs-toggle="modal"
+                      data-bs-target="#projectModal"
+                      data-title="Aplikasi Manajemen Tugas"
+                      data-img="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
+                      data-desc="Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari. Tugas bisa dikelompokkan per mata kuliah, diberi tenggat, dan ditandai selesai. Data tersimpan di browser sehingga tetap ada saat halaman dibuka kembali."
+                      data-role="Desain antarmuka dan seluruh logika JavaScript"
+                      data-tags="HTML,CSS,JavaScript"
+                    >
+                      Lihat detail proyek
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row g-0 slide">
+                  <div class="col-lg-7 slide__media">
+                    <img
+                      src="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
+                      alt="Tampilan proyek Website Toko Online"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="col-lg-5 slide__body">
+                    <span class="slide__count">2 dari 3</span>
+                    <h3 class="slide__title">Website Toko Online</h3>
+                    <p class="slide__text">
+                      Website sederhana untuk menampilkan dan mengelola katalog produk.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                      <span class="badge tag tag--dark">PHP</span>
+                      <span class="badge tag tag--dark">MySQL</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-coral"
+                      data-bs-toggle="modal"
+                      data-bs-target="#projectModal"
+                      data-title="Website Toko Online"
+                      data-img="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
+                      data-desc="Website sederhana untuk menampilkan dan mengelola katalog produk. Admin dapat menambah, mengubah, dan menghapus produk, sementara pengunjung bisa mencari produk berdasarkan kategori."
+                      data-role="Back-end PHP dan rancangan basis data MySQL"
+                      data-tags="PHP,MySQL"
+                    >
+                      Lihat detail proyek
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row g-0 slide">
+                  <div class="col-lg-7 slide__media">
+                    <img
+                      src="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
+                      alt="Tampilan proyek Sistem Absensi Digital"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="col-lg-5 slide__body">
+                    <span class="slide__count">3 dari 3</span>
+                    <h3 class="slide__title">Sistem Absensi Digital</h3>
+                    <p class="slide__text">
+                      Sistem pencatatan kehadiran berbasis web untuk organisasi kampus.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                      <span class="badge tag tag--dark">React</span>
+                      <span class="badge tag tag--dark">Node.js</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-coral"
+                      data-bs-toggle="modal"
+                      data-bs-target="#projectModal"
+                      data-title="Sistem Absensi Digital"
+                      data-img="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
+                      data-desc="Sistem pencatatan kehadiran berbasis web untuk organisasi kampus. Anggota mengisi kehadiran lewat kode acara, dan pengurus melihat rekap kehadiran per kegiatan."
+                      data-role="Front-end React dan API Node.js"
+                      data-tags="React,Node.js"
+                    >
+                      Lihat detail proyek
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="col">
+            <div class="carousel-indicators showcase-dots">
+              <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Proyek 1"></button>
+              <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Proyek 2"></button>
+              <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Proyek 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Keahlian -->
+      <section class="section-pad" id="keahlian">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <h2 class="section-heading">Keahlian</h2>
+              <p class="text-secondary">
+                Teknologi yang saya pakai di proyek-proyek di atas.
+              </p>
+            </div>
+            <div class="col-lg-8">
+              <div class="row row-cols-1 row-cols-sm-3 g-4 skills">
+                <div class="col">
+                  <h3 class="skills__group">Tampilan</h3>
+                  <ul class="skills__list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Bootstrap</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <h3 class="skills__group">Server</h3>
+                  <ul class="skills__list">
+                    <li>PHP</li>
+                    <li>Node.js</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <h3 class="skills__group">Basis data</h3>
+                  <ul class="skills__list">
+                    <li>MySQL</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ajakan -->
+      <section class="cta-band">
+        <div class="container">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8 text-center text-lg-start">
+              <h2 class="cta-band__title">Punya proyek yang ingin dibangun?</h2>
+              <p class="cta-band__text mb-0">
+                Ceritakan kebutuhannya lewat formulir singkat, langsung ke email saya.
+              </p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
               <button
                 type="button"
-                class="card project-card h-100 w-100 text-start"
+                class="btn btn-light btn-lg cta-band__btn"
                 data-bs-toggle="modal"
-                data-bs-target="#projectModal"
-                data-title="Sistem Absensi Digital"
-                data-img="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
-                data-desc="Sistem pencatatan kehadiran berbasis web untuk organisasi kampus. Anggota mengisi kehadiran lewat kode acara, dan pengurus melihat rekap kehadiran per kegiatan."
-                data-role="Front-end React dan API Node.js"
-                data-tags="React,Node.js"
+                data-bs-target="#contactModal"
               >
-                <img
-                  src="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
-                  class="card-img-top"
-                  alt="Tampilan proyek Sistem Absensi Digital"
-                  width="350"
-                  height="170"
-                  loading="lazy"
-                />
-                <span class="card-body d-block">
-                  <span class="h5 card-title d-block">Sistem Absensi Digital</span>
-                  <span class="card-text d-block text-secondary small mb-3">
-                    Sistem pencatatan kehadiran berbasis web untuk organisasi kampus.
-                  </span>
-                  <span class="d-flex flex-wrap gap-2">
-                    <span class="badge tag">React</span>
-                    <span class="badge tag">Node.js</span>
-                  </span>
-                </span>
+                Kirim pesan
               </button>
             </div>
           </div>
@@ -264,7 +422,9 @@
             <ul class="list-unstyled d-grid gap-2">
               <li><a href="#header">Beranda</a></li>
               <li><a href="#biodata">Biodata</a></li>
+              <li><a href="#layanan">Layanan</a></li>
               <li><a href="#portofolio">Portofolio</a></li>
+              <li><a href="#keahlian">Keahlian</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-4">

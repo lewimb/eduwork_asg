@@ -63,6 +63,11 @@ contactForm.addEventListener("submit", (event) => {
   contactForm.classList.remove("was-validated");
 });
 
+// Carousel tidak berputar otomatis bila pengguna memilih kurangi gerakan
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  bootstrap.Carousel.getOrCreateInstance(document.getElementById("projectCarousel")).pause();
+}
+
 // Tutup menu mobile setelah memilih tautan
 const navCollapse = document.getElementById("mainNav");
 navCollapse.querySelectorAll(".nav-link").forEach((link) => {
