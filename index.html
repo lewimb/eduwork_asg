@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lewi Meyvianus Borosi - Portofolio</title>
+    <meta
+      name="description"
+      content="Halaman profil dan portofolio Lewi Meyvianus Borosi, mahasiswa Teknik Informatika dan web developer."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar: collapses into a toggle menu below md -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top site-nav">
+      <div class="container">
+        <a href="#header" class="navbar-brand d-flex align-items-center gap-2">
+          <span class="brand-mark">LB</span>
+          Lewi Borosi
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Buka menu navigasi"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-md-center gap-md-4">
+            <li class="nav-item"><a class="nav-link" href="#header">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#biodata">Biodata</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portofolio">Portofolio</a></li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-coral btn-sm mt-2 mt-md-0"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+              >
+                Kirim pesan
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="header">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 text-center text-lg-start hero-copy">
+            <h1>Halo, saya Lewi Meyvianus Borosi</h1>
+            <p class="lead">
+              Mahasiswa Teknik Informatika yang senang membangun website dan
+              belajar hal baru seputar pengembangan perangkat lunak.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+              <a href="#portofolio" class="btn btn-coral btn-lg">Lihat portofolio</a>
+              <button
+                type="button"
+                class="btn btn-outline-light btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+              >
+                Hubungi saya
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-photo mx-auto">
+              <div class="hero-photo__frame">
+                <img
+                  src="./images/Lewi.jpg"
+                  alt="Foto Lewi Meyvianus Borosi"
+                  width="600"
+                  height="750"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Biodata -->
+      <section class="py-5 section-pad" id="biodata">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <h2 class="section-heading">Tentang saya</h2>
+              <p class="text-secondary">
+                Sedikit perkenalan singkat tentang latar belakang saya.
+              </p>
+            </div>
+            <div class="col-lg-8">
+              <dl class="row g-0 bio-list mb-0">
+                <div class="col-sm-6 bio-item">
+                  <dt>Nama lengkap</dt>
+                  <dd>Lewi Meyvianus Borosi</dd>
+                </div>
+                <div class="col-sm-6 bio-item">
+                  <dt>Pendidikan</dt>
+                  <dd>S1 Teknik Informatika</dd>
+                </div>
+                <div class="col-sm-6 bio-item">
+                  <dt>Pekerjaan</dt>
+                  <dd>Mahasiswa / Web Developer</dd>
+                </div>
+                <div class="col-sm-6 bio-item">
+                  <dt>Kontak</dt>
+                  <dd><a href="mailto:borosilewi@gmail.com">borosilewi@gmail.com</a></dd>
+                </div>
+                <div class="col-sm-6 bio-item">
+                  <dt>Hobi</dt>
+                  <dd>Membaca, coding</dd>
+                </div>
+                <div class="col-sm-6 bio-item">
+                  <dt>Alamat</dt>
+                  <dd>Jakarta, Indonesia</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portofolio -->
+      <section class="py-5 section-pad section-tint" id="portofolio">
+        <div class="container">
+          <h2 class="section-heading">Portofolio</h2>
+          <p class="text-secondary mb-5">
+            Beberapa proyek yang pernah saya kerjakan. Pilih proyek untuk melihat detailnya.
+          </p>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <button
+                type="button"
+                class="card project-card h-100 w-100 text-start"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal"
+                data-title="Aplikasi Manajemen Tugas"
+                data-img="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
+                data-desc="Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari. Tugas bisa dikelompokkan per mata kuliah, diberi tenggat, dan ditandai selesai. Data tersimpan di browser sehingga tetap ada saat halaman dibuka kembali."
+                data-role="Desain antarmuka dan seluruh logika JavaScript"
+                data-tags="HTML,CSS,JavaScript"
+              >
+                <img
+                  src="https://i.pinimg.com/1200x/c6/da/45/c6da451a188e9fbc2e77fd822b8e5f56.jpg"
+                  class="card-img-top"
+                  alt="Tampilan proyek Aplikasi Manajemen Tugas"
+                  width="350"
+                  height="170"
+                  loading="lazy"
+                />
+                <span class="card-body d-block">
+                  <span class="h5 card-title d-block">Aplikasi Manajemen Tugas</span>
+                  <span class="card-text d-block text-secondary small mb-3">
+                    Aplikasi untuk mencatat dan melacak progres tugas kuliah sehari-hari.
+                  </span>
+                  <span class="d-flex flex-wrap gap-2">
+                    <span class="badge tag">HTML</span>
+                    <span class="badge tag">CSS</span>
+                    <span class="badge tag">JavaScript</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <div class="col">
+              <button
+                type="button"
+                class="card project-card h-100 w-100 text-start"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal"
+                data-title="Website Toko Online"
+                data-img="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
+                data-desc="Website sederhana untuk menampilkan dan mengelola katalog produk. Admin dapat menambah, mengubah, dan menghapus produk, sementara pengunjung bisa mencari produk berdasarkan kategori."
+                data-role="Back-end PHP dan rancangan basis data MySQL"
+                data-tags="PHP,MySQL"
+              >
+                <img
+                  src="https://i.pinimg.com/1200x/af/ee/40/afee40a9651468830face12eed7194bf.jpg"
+                  class="card-img-top"
+                  alt="Tampilan proyek Website Toko Online"
+                  width="350"
+                  height="170"
+                  loading="lazy"
+                />
+                <span class="card-body d-block">
+                  <span class="h5 card-title d-block">Website Toko Online</span>
+                  <span class="card-text d-block text-secondary small mb-3">
+                    Website sederhana untuk menampilkan dan mengelola katalog produk.
+                  </span>
+                  <span class="d-flex flex-wrap gap-2">
+                    <span class="badge tag">PHP</span>
+                    <span class="badge tag">MySQL</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <div class="col">
+              <button
+                type="button"
+                class="card project-card h-100 w-100 text-start"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal"
+                data-title="Sistem Absensi Digital"
+                data-img="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
+                data-desc="Sistem pencatatan kehadiran berbasis web untuk organisasi kampus. Anggota mengisi kehadiran lewat kode acara, dan pengurus melihat rekap kehadiran per kegiatan."
+                data-role="Front-end React dan API Node.js"
+                data-tags="React,Node.js"
+              >
+                <img
+                  src="https://i.pinimg.com/1200x/27/49/7a/27497aeee1f4f46bda4a54cada8e594a.jpg"
+                  class="card-img-top"
+                  alt="Tampilan proyek Sistem Absensi Digital"
+                  width="350"
+                  height="170"
+                  loading="lazy"
+                />
+                <span class="card-body d-block">
+                  <span class="h5 card-title d-block">Sistem Absensi Digital</span>
+                  <span class="card-text d-block text-secondary small mb-3">
+                    Sistem pencatatan kehadiran berbasis web untuk organisasi kampus.
+                  </span>
+                  <span class="d-flex flex-wrap gap-2">
+                    <span class="badge tag">React</span>
+                    <span class="badge tag">Node.js</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4 mb-4 text-center text-md-start">
+          <div class="col-md-5">
+            <h3>Lewi Borosi</h3>
+            <p>Mahasiswa Teknik Informatika dan web developer asal Jakarta.</p>
+          </div>
+          <div class="col-6 col-md-3">
+            <h3>Navigasi</h3>
+            <ul class="list-unstyled d-grid gap-2">
+              <li><a href="#header">Beranda</a></li>
+              <li><a href="#biodata">Biodata</a></li>
+              <li><a href="#portofolio">Portofolio</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4">
+            <h3>Kontak</h3>
+            <ul class="list-unstyled d-grid gap-2">
+              <li><a href="mailto:borosilewi@gmail.com">borosilewi@gmail.com</a></li>
+              <li>Jakarta, Indonesia</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          &copy; 2026 Lewi Meyvianus Borosi. Seluruh hak cipta dilindungi.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal: detail proyek (diisi dari data-* kartu yang diklik) -->
+    <div
+      class="modal fade"
+      id="projectModal"
+      tabindex="-1"
+      aria-labelledby="projectModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable site-modal">
+        <div class="modal-content">
+          <div class="site-modal__media">
+            <img src="" alt="" id="projectModalImg" />
+            <button
+              type="button"
+              class="btn-close site-modal__close--media"
+              data-bs-dismiss="modal"
+              aria-label="Tutup"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-title" id="projectModalTitle">Detail proyek</h2>
+            <div class="d-flex flex-wrap gap-2 mt-2 mb-3" id="projectModalTags"></div>
+            <p class="site-modal__text" id="projectModalDesc"></p>
+            <dl class="site-modal__meta">
+              <dt>Peran saya</dt>
+              <dd id="projectModalRole"></dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+            <button
+              type="button"
+              class="btn btn-coral"
+              data-bs-target="#contactModal"
+              data-bs-toggle="modal"
+            >
+              Tanya soal proyek ini
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: kirim pesan -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered site-modal">
+        <div class="modal-content">
+          <form id="contactForm" novalidate>
+            <div class="modal-header">
+              <div>
+                <h2 class="modal-title" id="contactModalTitle">Kirim pesan ke Lewi</h2>
+                <p class="site-modal__hint">Pesan dibuka di aplikasi email Anda sebelum terkirim.</p>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="contactName" required autocomplete="name" />
+                <div class="invalid-feedback">Isi nama Anda.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contactEmail" required autocomplete="email" />
+                <div class="invalid-feedback">Masukkan alamat email yang valid, misalnya nama@email.com.</div>
+              </div>
+              <div class="mb-1">
+                <label for="contactMessage" class="form-label">Pesan</label>
+                <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                <div class="invalid-feedback">Tulis pesan Anda.</div>
+              </div>
+              <div class="alert alert-success mt-3 mb-0 d-none" id="contactSuccess" role="status">
+                Pesan siap dikirim. Aplikasi email Anda akan terbuka.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-coral">Kirim pesan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

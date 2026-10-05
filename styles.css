@@ -1,0 +1,559 @@
+/* ============ Tokens (di atas Bootstrap) ============ */
+:root {
+  --navy: #14213d;
+  --navy-deep: #0d1830;
+  --navy-light: #223159;
+  --coral: #ff5a36;
+  --coral-dark: #e0431f;
+  --coral-tint: #fff0eb;
+  --teal: #12968a;
+  --teal-tint: #e9f7f5;
+  --sand: #ffb25e;
+  --ink-soft: #5b6584;
+  --line: #e3e7f2;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+
+  --bs-body-font-family: "Inter", "Segoe UI", sans-serif;
+  --bs-body-color: var(--navy);
+  --bs-body-bg: #ffffff;
+  --bs-secondary-color: var(--ink-soft);
+  --bs-border-color: var(--line);
+  --bs-link-color-rgb: 255, 90, 54;
+  --bs-focus-ring-color: rgba(255, 90, 54, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+h1, h2, h3, .h4, .h5, .modal-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+.form-control:focus {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 0.25rem rgba(255, 90, 54, 0.2);
+}
+
+/* ============ Tombol ============ */
+.btn {
+  font-weight: 600;
+}
+
+.btn-coral {
+  --bs-btn-bg: var(--coral);
+  --bs-btn-border-color: var(--coral);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--coral-dark);
+  --bs-btn-hover-border-color: var(--coral-dark);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--coral-dark);
+  --bs-btn-active-border-color: var(--coral-dark);
+  --bs-btn-active-color: #fff;
+}
+
+.btn-outline-light {
+  --bs-btn-border-color: #4a5578;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: var(--coral);
+  --bs-btn-active-bg: transparent;
+  --bs-btn-active-border-color: var(--coral);
+}
+
+/* ============ Navbar ============ */
+.site-nav {
+  background: rgba(13, 24, 48, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-nav .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--coral);
+  transform: rotate(-4deg);
+  display: inline-grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.site-nav .nav-link {
+  color: #c9d1ee;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus-visible {
+  color: #fff;
+  border-color: var(--coral);
+}
+
+.site-nav .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Menu mobile: beri jarak dari baris brand */
+@media (max-width: 767.98px) {
+  .site-nav .navbar-collapse {
+    padding: 12px 0 8px;
+  }
+  .site-nav .nav-link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 0;
+  }
+}
+
+/* ============ Hero ============ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) 0;
+  color: #fff;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(var(--navy-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--navy-light) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: clamp(300px, 40vw, 480px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 54, 0.35), transparent 72%);
+  top: -140px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 1.5rem + 2.5vw, 3.4rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 1.1rem;
+}
+
+.hero .lead {
+  color: #c9d1ee;
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 991.98px) {
+  .hero .lead {
+    margin-inline: auto;
+  }
+}
+
+/* Foto: bingkai miring + duotone khas brand */
+.hero-photo {
+  position: relative;
+  width: min(100%, 400px);
+  aspect-ratio: 4 / 5;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--coral), var(--sand));
+  transform: rotate(6deg);
+}
+
+.hero-photo__frame {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotate(-3deg);
+  box-shadow: 0 24px 48px rgba(5, 10, 25, 0.45);
+}
+
+.hero-photo__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: grayscale(1) contrast(1.05) brightness(1.08);
+}
+
+.hero-photo__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--coral) 100%);
+  mix-blend-mode: color;
+  opacity: 0.9;
+}
+
+@media (max-width: 575.98px) {
+  .hero-photo {
+    width: min(78%, 300px);
+  }
+}
+
+/* ============ Section umum ============ */
+.section-pad {
+  padding-top: clamp(56px, 8vw, 88px) !important;
+  padding-bottom: clamp(56px, 8vw, 88px) !important;
+}
+
+.section-tint {
+  background: #f5f7fb;
+}
+
+.section-heading {
+  font-size: clamp(1.7rem, 1.3rem + 1.5vw, 2.4rem);
+  margin-bottom: 0.6rem;
+}
+
+.section-heading::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--coral);
+  margin-bottom: 18px;
+}
+
+/* ============ Biodata: daftar dua kolom bergaris ============ */
+.bio-list {
+  border-top: 2px solid var(--navy);
+}
+
+.bio-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 576px) {
+  .bio-item:nth-child(odd) {
+    padding-right: 24px;
+  }
+  .bio-item:nth-child(even) {
+    padding-left: 24px;
+    border-left: 1px solid var(--line);
+  }
+}
+
+.bio-item dt {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.bio-item dd {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.bio-item dd a {
+  color: inherit;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 4px;
+}
+
+/* ============ Kartu proyek (tombol pembuka modal) ============ */
+.project-card {
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 1px var(--coral);
+}
+
+.project-card .card-img-top {
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--sand), var(--coral));
+  border-radius: 0;
+}
+
+.project-card .card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  background: var(--teal-tint);
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.45em 0.8em;
+  border-radius: 999px;
+}
+
+/* ============ Modal ============ */
+/* Satu gaya untuk kedua modal: permukaan putih, ritme 24px */
+.modal {
+  --bs-modal-width: 560px;
+  --bs-modal-padding: 1.5rem;
+  --bs-modal-header-padding: 1.5rem 1.5rem 0.75rem;
+  --bs-modal-border-width: 0;
+  --bs-modal-border-radius: 16px;
+  --bs-modal-inner-border-radius: 16px;
+  --bs-modal-box-shadow: 0 24px 64px rgba(13, 24, 48, 0.35);
+  --bs-modal-footer-border-width: 0;
+  --bs-modal-header-border-width: 0;
+}
+
+.modal-backdrop {
+  --bs-backdrop-bg: var(--navy-deep);
+  --bs-backdrop-opacity: 0.7;
+}
+
+.site-modal .modal-content {
+  overflow: hidden;
+  box-shadow: var(--bs-modal-box-shadow);
+}
+
+.site-modal .modal-header {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.site-modal .modal-title {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.site-modal .modal-body {
+  padding-top: 0.75rem;
+}
+
+.site-modal__media + .modal-body {
+  padding-top: 1.5rem;
+}
+
+.site-modal .modal-footer {
+  padding: 0 1.5rem 1.5rem;
+  gap: 0.5rem;
+}
+
+.site-modal .modal-footer > * {
+  margin: 0;
+}
+
+.site-modal__hint {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin: 0.35rem 0 0;
+}
+
+.site-modal__text {
+  color: #3b4566;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.site-modal__meta {
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-modal__meta dt {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-bottom: 2px;
+}
+
+.site-modal__meta dd {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Gambar proyek dengan tombol tutup di atasnya */
+.site-modal__media {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.site-modal__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--sand), var(--coral));
+}
+
+.site-modal__close--media {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.92);
+  background-size: 12px;
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(13, 24, 48, 0.25);
+}
+
+.site-modal__close--media:hover {
+  background-color: #fff;
+}
+
+/* Form */
+.site-modal .form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.site-modal .form-control {
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+}
+
+.site-modal .btn-light {
+  --bs-btn-bg: #eef1f7;
+  --bs-btn-border-color: #eef1f7;
+  --bs-btn-hover-bg: var(--line);
+  --bs-btn-hover-border-color: var(--line);
+  --bs-btn-color: var(--navy);
+}
+
+/* Ponsel: modal menjadi lembar bawah, tombol penuh */
+@media (max-width: 575.98px) {
+  .site-modal.modal-dialog {
+    margin: 0;
+    min-height: 100%;
+    align-items: flex-end;
+  }
+
+  .site-modal.modal-dialog-scrollable {
+    height: 100%;
+  }
+
+  .site-modal .modal-content {
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .modal.fade .site-modal {
+    transform: translateY(48px);
+  }
+
+  .modal.show .site-modal {
+    transform: none;
+  }
+
+  .site-modal .modal-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .site-modal .modal-footer .btn {
+    width: 100%;
+    padding-block: 0.7rem;
+  }
+}
+
+/* ============ Footer ============ */
+.site-footer {
+  background: var(--navy);
+  color: #c9d1ee;
+  padding: 48px 0 32px;
+  border-top: 3px solid var(--coral);
+  font-size: 0.9rem;
+}
+
+.site-footer h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.site-footer a {
+  color: #c9d1ee;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--coral);
+}
+
+.site-footer__bottom {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #7c87ac;
+  border-top: 1px solid var(--navy-light);
+  padding-top: 20px;
+}
+
+/* ============ Animasi masuk (hero saja, sekali) ============ */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: rise 0.7s ease both;
+  }
+  .hero-copy > :nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .hero-copy > :nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .hero-photo {
+    animation: rise 0.8s ease 0.15s both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
